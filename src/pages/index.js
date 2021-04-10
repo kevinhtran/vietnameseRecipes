@@ -1,3 +1,20 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
-export default () => <div>Hello people!</div>;
+const Home = () => {
+  return (
+    <div>
+      <h1>Hello World!</h1>
+      <div>
+        <Link to="/about">About</Link>
+      </div>
+      <div>
+        <Link to="/company/history">history</Link>
+      </div>
+      <a href="/about">Regular Link</a>
+      <a href="https://www.gatsbyjs.com/">gatsbyjs</a>
+    </div>
+  );
+};
+
+export default Home;
