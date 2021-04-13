@@ -4,6 +4,10 @@ import { Link } from 'gatsby';
 const Home = () => {
   return (
     <div>
+      <nav>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </nav>
       <h1>Hello World!</h1>
       <div>
         <Link to="/about">About</Link>
