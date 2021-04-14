@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { FaAlignJustify } from '@react-icons/all-files/fa/FaAlignJustify';
 import logo from '../assets/images/logo.svg';
 
 const Navbar = () => {
+  const [show, setShow] = useState(false);
   return (
     <nav className="navbar">
       <div className="nav-center">
@@ -15,7 +16,7 @@ const Navbar = () => {
             <FaAlignJustify />
           </button>
         </div>
-        <div className="nav-links show-links">
+        <div className={show ? 'nav-links show-links' : 'nav-links'}>
           <Link to="/" className="nav-link" activeClassName="active-link">
             home
           </Link>
