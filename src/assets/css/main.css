@@ -366,6 +366,8 @@ form > *:last-child {
   flex-direction: column;
   transition: var(--transition);
 }
+
+/* This is actually a hardcoded height but there is a more dynamic way to show links.*/
 .show-links {
   height: 23.9375rem;
 }
