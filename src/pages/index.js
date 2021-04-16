@@ -14,6 +14,12 @@ const Home = () => {
             placeholder="tracedSVG"
             layout="fullWidth"
           />
+          <div className="hero-container">
+            <div className="hero-text">
+              <h1>Vietnamese Recipes Any Day</h1>
+              <h4>No fluff, just Vietnamese recipes</h4>
+            </div>
+          </div>
         </header>
       </main>
     </Layout>
