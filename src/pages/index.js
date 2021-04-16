@@ -5,7 +5,17 @@ import { StaticImage } from 'gatsby-plugin-image';
 const Home = () => {
   return (
     <Layout>
-      <h1>home page</h1>
+      <main className="page">
+        <header className="hero">
+          <StaticImage
+            src="../assets/images/main.jpeg"
+            alt="eggs"
+            className="hero-img"
+            placeholder="tracedSVG"
+            layout="fullWidth"
+          />
+        </header>
+      </main>
     </Layout>
   );
 };
