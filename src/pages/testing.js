@@ -1,33 +1,15 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import Gallery from '../examples/Gallery';
 
 const Testing = ({ data }) => {
-  const author = data.site.info.author; // good way for destructing
   return (
-    <div>
-      <h2>author: {author}</h2>
-    </div>
+    <Layout>
+      <main className="page">
+        <Gallery />
+      </main>
+    </Layout>
   );
 };
 
-export const data = graphql`
-  {
-    site {
-      info: siteMetadata {
-        title
-        description
-        author
-        simpleData
-        complexData {
-          name
-          age
-        }
-        person {
-          name
-          age
-        }
-      }
-    }
-  }
-`;
 export default Testing;
