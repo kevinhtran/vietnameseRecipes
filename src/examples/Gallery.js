@@ -24,8 +24,12 @@ const Gallery = () => {
       {nodes.map((image, index) => {
         const { name } = image;
         return (
-          <article key={index}>
-            <GatsbyImage image={image.childImageSharp.gatsbyImageData} />
+          <article key={index} className="item">
+            <GatsbyImage
+              image={image.childImageSharp.gatsbyImageData}
+              alt={name}
+              className="gallery-img"
+            />
             <p>{name}</p>
           </article>
         );
@@ -34,6 +38,15 @@ const Gallery = () => {
   );
 };
 
-const Wrapper = styled.section``;
+const Wrapper = styled.section`
+  display: flex;
+  flex-wrap: wrap;
+  .item {
+    margin-right: 1rem;
+  }
+  .gallery-img {
+    border-radius: 1rem;
+  }
+`;
 
 export default Gallery;
