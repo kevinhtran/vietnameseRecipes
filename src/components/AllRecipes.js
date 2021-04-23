@@ -24,18 +24,18 @@ const query = graphql`
 
 const AllRecipes = () => {
   // destructuring way
-  const {
-    allContentfulRecipes: { nodes: recipes },
-  } = useStaticQuery(query);
+  // const {
+  //   allContentfulRecipes: { nodes: recipes },
+  // } = useStaticQuery(query);
 
   // this is the same as the destructuring way
-  // const data = useStaticQuery(query);
-  // const recipes = data.allContentfulRecipe.nodes;
+  const data = useStaticQuery(query);
+  const recipes = data.allContentfulRecipe.nodes;
   return (
-    <div>
+    <section className="recipes-container">
       <TagsList recipes={recipes} />
       <RecipesList recipes={recipes} />
-    </div>
+    </section>
   );
 };
 
