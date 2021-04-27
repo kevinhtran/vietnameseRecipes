@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Layout from '../components/Layout';
 import { StaticImage } from 'gatsby-plugin-image';
+import { Link, graphql } from 'gatsby';
 
 const About = () => {
   return (
