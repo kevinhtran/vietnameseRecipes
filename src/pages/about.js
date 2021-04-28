@@ -29,13 +29,13 @@ const About = ({
           </article>
           <StaticImage
             src="../assets/images/about.jpeg"
-            alt="Person pouring salt in bowl"
+            alt="Person Pouring Salt in Bowl"
             className="about-img"
             placeholder="blurred"
           />
         </section>
         <section className="featured-recipes">
-          <h5>Check out these featured recipes!</h5>
+          <h5>Look at this Awesomesouce!</h5>
           <RecipesList recipes={recipes} />
         </section>
       </main>
