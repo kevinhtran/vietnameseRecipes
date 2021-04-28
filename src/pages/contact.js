@@ -1,13 +1,16 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import { Link, graphql } from 'gatsby';
+import RecipesList from '../components/RecipesList';
 
-const Contact = () => {
+const Contact = ({ data }) => {
+  const recipes = data.allContentfulRecipe.nodes;
   return (
     <Layout>
       <main className="page">
-        <h3>Get in touch with us</h3>
-        <article className="contact-info">
-          <section className="contact-page">
+        <section className="contact-page">
+          <article className="contact-info">
+            <h3>Want To Get In Touch?</h3>
             <p>
               Ut iPhone do artisan plaid. Distillery whatever godard, enamel pin before they sold
               out palo santo echo park fingerstache. Irure portland DIY, bushwick migas activated
@@ -22,30 +25,50 @@ const Contact = () => {
               tote bag microdosing mixtape copper mug mlkshk chia dreamcatcher organic. Cillum
               kitsch vaporware +1 typewriter cold-pressed readymade asymmetrical stumptown.
             </p>
-          </section>
-        </article>
-        <article>
-          <form className="form contact-form">
-            <div className="form-row">
-              <label htmlFor="name">your name</label>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div className="form-row">
-              <label htmlFor="email">your email</label>
-              <input type="text" email="email" id="email" />
-            </div>
-            <div className="form-row">
-              <label htmlFor="message">message</label>
-              <textarea name="message" id="message" cols="30" rows="10"></textarea>
-            </div>
-            <button type="submit" className="btn block">
-              Submit
-            </button>
-          </form>
-        </article>
+          </article>
+          <article>
+            <form className="form contact-form">
+              <div className="form-row">
+                <label htmlFor="name">your name</label>
+                <input type="text" name="name" id="name" />
+              </div>
+              <div className="form-row">
+                <label htmlFor="email">your email</label>
+                <input type="text" name="email" id="email" />
+              </div>
+              <div className="form-row">
+                <label htmlFor="message">message</label>
+                <textarea name="message" id="message"></textarea>
+              </div>
+              <button type="submit" className="btn block">
+                submit
+              </button>
+            </form>
+          </article>
+        </section>
+        <section className="featured-recipes">
+          <h5>Look at this Awesomesouce!</h5>
+          <RecipesList recipes={recipes} />
+        </section>
       </main>
     </Layout>
   );
 };
+
+export const query = graphql`
+  {
+    allContentfulRecipe(sort: { fields: title, order: ASC }, filter: { featured: { eq: true } }) {
+      nodes {
+        id
+        title
+        cookTime
+        prepTime
+        image {
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  }
+`;
 
 export default Contact;
