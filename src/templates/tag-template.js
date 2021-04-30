@@ -24,8 +24,8 @@ export const query = graphql`
       filter: { content: { tags: { eq: $tag } } }
     ) {
       nodes {
-        id
         title
+        id
         cookTime
         prepTime
         image {

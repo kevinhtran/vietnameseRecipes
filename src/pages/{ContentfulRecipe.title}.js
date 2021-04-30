@@ -5,6 +5,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { BsClockHistory } from '@react-icons/all-files/bs/BsClockHistory';
 import { BsClock } from '@react-icons/all-files/bs/BsClock';
 import { BsPeople } from '@react-icons/all-files/bs/BsPeople';
+import slugify from 'slugify';
 
 const RecipeTemplate = ({ data }) => {
   const {
@@ -50,8 +51,9 @@ const RecipeTemplate = ({ data }) => {
               <p className="recipe-tags">
                 Tags:
                 {tags.map((tag, index) => {
+                  const slug = slugify(tag, { lower: true });
                   return (
-                    <Link to={`/${tag}`} key={index}>
+                    <Link to={`/tags/${slug}`} key={index}>
                       {tag}
                     </Link>
                   );
