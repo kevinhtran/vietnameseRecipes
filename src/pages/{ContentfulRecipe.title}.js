@@ -6,6 +6,7 @@ import { BsClockHistory } from '@react-icons/all-files/bs/BsClockHistory';
 import { BsClock } from '@react-icons/all-files/bs/BsClock';
 import { BsPeople } from '@react-icons/all-files/bs/BsPeople';
 import slugify from 'slugify';
+import SEO from '../components/SEO';
 
 const RecipeTemplate = ({ data }) => {
   const {
@@ -21,6 +22,7 @@ const RecipeTemplate = ({ data }) => {
   const { tags, instructions, ingredients, tools } = content;
   return (
     <Layout>
+      <SEO title={title} description={description} />
       <main className="page">
         <div className="recipe-page">
           {/* hero */}
