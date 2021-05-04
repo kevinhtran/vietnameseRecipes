@@ -10,6 +10,7 @@ const Contact = ({ data }) => {
       <main className="page">
         <section className="contact-page">
           <article className="contact-info">
+            {' '}
             <h3>Want To Get In Touch?</h3>
             <p>
               Ut iPhone do artisan plaid. Distillery whatever godard, enamel pin before they sold
